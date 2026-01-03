@@ -9,7 +9,7 @@
   - `.gitignore`、`README.md`を設定
   - _Requirements: 10.1_
 
-- [ ] 2. (P) 依存関係のインストールと設定
+- [x] 2. (P) 依存関係のインストールと設定
   - React 18.x、TailwindCSS 4.x、jsqr 1.4.0をインストール
   - `@astrojs/react`、`@astrojs/tailwind`統合を追加
   - TailwindCSS設定ファイル（`tailwind.config.mjs`）を作成
