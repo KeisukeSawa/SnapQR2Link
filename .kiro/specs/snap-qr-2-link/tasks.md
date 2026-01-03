@@ -73,7 +73,7 @@
 ## Reactコンポーネント（島）の実装
 
 - [ ] 7. ImageUploaderコンポーネントの実装
-- [ ] 7.1 ファイル選択とドラッグ&ドロップ機能
+- [x] 7.1 ファイル選択とドラッグ&ドロップ機能
   - `src/components/qr/ImageUploader.tsx`を作成
   - ファイル選択ボタンとinput[type="file"]の実装
   - ドラッグ&ドロップエリアの実装（`onDrop`, `onDragOver`イベント）
@@ -82,7 +82,7 @@
   - TailwindCSSでスタイリング（レスポンシブ対応）
   - _Requirements: 1.1, 1.2, 1.6, 1.7_
 
-- [ ] 7.2 クリップボードペースト機能
+- [x] 7.2 クリップボードペースト機能
   - Ctrl+V（Cmd+V）のpasteイベントリスナーを追加
   - `event.clipboardData.files`から画像ファイルを取得
   - FileReaderで画像をDataURLまたはArrayBufferに変換
