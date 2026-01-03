@@ -26,7 +26,7 @@
 ## コアロジックの実装
 
 - [ ] 4. ファイルバリデーション機能の実装
-- [ ] 4.1 (P) 画像ファイルバリデーターの作成
+- [x] 4.1 (P) 画像ファイルバリデーターの作成
   - `src/lib/qr/validator.ts`を作成
   - `validateImage(file: File)`関数を実装
   - JPG、PNG、WebP、GIF形式のサポート判定
