@@ -44,7 +44,7 @@
   - _Requirements: 1.4, 1.5, 1.6, 1.7_
 
 - [ ] 5. QRコード検出機能の実装
-- [ ] 5.1 (P) QRコードスキャナーの作成
+- [x] 5.1 (P) QRコードスキャナーの作成
   - `src/lib/qr/scanner.ts`を作成
   - `scanQRCode(imageFile: File, options?: ScanOptions)`関数を実装
   - Canvas APIで画像をImageDataに変換
@@ -64,7 +64,7 @@
   - 画像リサイズのテストケース
   - _Requirements: 2.1, 2.3, 2.4, 2.5_
 
-- [ ] 6. (P) URLユーティリティの実装
+- [x] 6. (P) URLユーティリティの実装
   - `src/lib/utils/url.ts`を作成
   - `isValidURL(data: string): boolean`関数を実装（http/httpsスキーム検証）
   - URL整形ユーティリティ（必要に応じて）
