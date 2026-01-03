@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx cc-sdd@latest --claude --lang ja --yes)"
+    ]
+  }
+}
