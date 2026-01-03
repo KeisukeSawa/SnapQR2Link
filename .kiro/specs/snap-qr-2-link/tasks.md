@@ -16,7 +16,7 @@
   - TypeScript設定（`tsconfig.json`）でpath alias `@/*`を設定
   - _Requirements: 10.1_
 
-- [ ] 3. (P) Astro i18n設定
+- [x] 3. (P) Astro i18n設定
   - `astro.config.mjs`でi18n設定（日本語・英語）を追加
   - `i18n.locales: ['ja', 'en']`、`i18n.defaultLocale: 'ja'`を設定
   - i18n翻訳辞書（`src/i18n/locales/ja.json`, `en.json`）を作成

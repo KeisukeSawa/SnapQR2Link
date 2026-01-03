@@ -1,0 +1,33 @@
+{
+  "app": {
+    "title": "SnapQR2Link",
+    "description": "スクリーンショット内のQRコードを解析し、リンクへ直接ジャンプ"
+  },
+  "uploader": {
+    "title": "QRコード画像をアップロード",
+    "selectFile": "ファイルを選択",
+    "dragDrop": "ここにドラッグ＆ドロップ",
+    "pasteHint": "または Ctrl+V で貼り付け",
+    "supportedFormats": "対応形式: JPG, PNG, WebP, GIF",
+    "maxFileSize": "最大ファイルサイズ: 50MB"
+  },
+  "errors": {
+    "unsupportedFormat": "このファイル形式はサポートされていません（JPG、PNG、WebP、GIFのみ対応）",
+    "fileTooLarge": "ファイルサイズが大きすぎます（最大50MB）",
+    "noQRCode": "QRコードが検出できませんでした",
+    "noImageInClipboard": "クリップボードに画像が見つかりません",
+    "processingError": "画像処理中にエラーが発生しました"
+  },
+  "results": {
+    "title": "検出結果",
+    "openLink": "リンクを開く",
+    "copyText": "コピー",
+    "copied": "コピーしました",
+    "clear": "クリア",
+    "loading": "解析中..."
+  },
+  "footer": {
+    "madeWith": "Made with",
+    "privacy": "すべての処理はブラウザ内で完結します"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "app": {
+    "title": "SnapQR2Link",
+    "description": "Scan QR codes from screenshots and jump to links instantly"
+  },
+  "uploader": {
+    "title": "Upload QR Code Image",
+    "selectFile": "Select File",
+    "dragDrop": "Drag & Drop Here",
+    "pasteHint": "or Paste with Ctrl+V",
+    "supportedFormats": "Supported: JPG, PNG, WebP, GIF",
+    "maxFileSize": "Max file size: 50MB"
+  },
+  "errors": {
+    "unsupportedFormat": "Unsupported file format (JPG, PNG, WebP, GIF only)",
+    "fileTooLarge": "File size too large (max 50MB)",
+    "noQRCode": "No QR code detected",
+    "noImageInClipboard": "No image found in clipboard",
+    "processingError": "Error occurred during image processing"
+  },
+  "results": {
+    "title": "Detection Results",
+    "openLink": "Open Link",
+    "copyText": "Copy",
+    "copied": "Copied!",
+    "clear": "Clear",
+    "loading": "Analyzing..."
+  },
+  "footer": {
+    "madeWith": "Made with",
+    "privacy": "All processing happens in your browser"
+  }
+}
