@@ -246,14 +246,14 @@
 
 ## テストとCI/CD
 
-- [ ] 17. E2Eテストの実装
-- [ ] 17.1 Playwrightセットアップ
+- [x] 17. E2Eテストの実装
+- [x] 17.1 Playwrightセットアップ
   - Playwrightをインストール
   - `playwright.config.ts`を作成
   - テストディレクトリ（`e2e/`）を作成
   - _Requirements: 8.2_
 
-- [ ] 17.2 E2Eテストシナリオの実装
+- [x] 17.2 E2Eテストシナリオの実装
   - 画像アップロード → QRコード検出 → リンクオープンの一連フロー
   - ドラッグ&ドロップのテスト
   - クリップボードペーストのテスト
@@ -262,7 +262,7 @@
   - マルチブラウザテスト（Chrome、Firefox、Safari）
   - _Requirements: 1.1, 1.2, 1.3, 2.4, 2.7, 8.2_
 
-- [ ] 18. (P) CI/CDパイプラインの設定
+- [x] 18. (P) CI/CDパイプラインの設定
   - GitHub Actionsワークフローファイル（`.github/workflows/deploy.yml`）を作成
   - mainブランチプッシュ時に自動ビルド・デプロイ
   - Vitestユニットテストの実行

@@ -8,7 +8,8 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://snapqr2link.example.com', // TODO: Update with actual domain
+  site: 'https://keisukesawa.github.io',
+  base: '/SnapQR2Link',
 
   integrations: [
     react(),
