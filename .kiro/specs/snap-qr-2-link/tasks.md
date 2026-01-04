@@ -184,7 +184,7 @@
   - _Requirements: 5.1, 5.2, 6.1_
 
 - [ ] 12. ページの実装
-- [ ] 12.1 日本語ページの作成
+- [x] 12.1 日本語ページの作成
   - `src/pages/ja/index.astro`を作成
   - MainLayoutを使用
   - QRScannerコンポーネントを`client:load`で配置
@@ -192,7 +192,7 @@
   - 日本語UIテキスト（i18n辞書から取得）
   - _Requirements: 4.2, 4.4, 7.6, 8.3_
 
-- [ ] 12.2 英語ページの作成
+- [x] 12.2 英語ページの作成
   - `src/pages/en/index.astro`を作成
   - MainLayoutを使用
   - QRScannerコンポーネントを`client:load`で配置
@@ -200,7 +200,7 @@
   - 英語UIテキスト（i18n辞書から取得）
   - _Requirements: 4.3, 4.4, 7.6, 8.3_
 
-- [ ] 12.3 ルートページのリダイレクト
+- [x] 12.3 ルートページのリダイレクト
   - `src/pages/index.astro`を作成
   - ブラウザ言語設定を検出してデフォルト言語にリダイレクト
   - 日本語ブラウザ → `/ja`、英語ブラウザ → `/en`

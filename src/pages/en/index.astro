@@ -1,0 +1,22 @@
+---
+import MainLayout from '@/layouts/MainLayout.astro';
+import { QRScanner } from '@/components/qr/QRScanner';
+import { getI18n } from '@/i18n/utils';
+
+const locale = 'en';
+const i18n = getI18n(locale);
+
+// Construct canonical URL
+const canonicalUrl = new URL('/en', Astro.site || Astro.url.origin).href;
+---
+
+<MainLayout
+  title={i18n.app.title}
+  description={i18n.app.description}
+  locale={locale}
+  canonicalUrl={canonicalUrl}
+>
+  <div class="container mx-auto px-4">
+    <QRScanner locale={locale} client:load />
+  </div>
+</MainLayout>
