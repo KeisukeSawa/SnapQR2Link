@@ -102,10 +102,10 @@ export function ImageUploader({ onImageUpload, onError, locale }: ImageUploaderP
   }, [locale, onImageUpload, onError]);
 
   return (
-    <div className="w-full max-w-2xl mx-auto">
+    <div className="w-full max-w-2xl mx-auto px-2 sm:px-0">
       <div
         className={`
-          border-2 border-dashed rounded-lg p-8 text-center
+          border-2 border-dashed rounded-lg p-4 sm:p-6 md:p-8 text-center
           transition-colors duration-200
           ${isDragging
             ? 'border-blue-500 bg-blue-50'
@@ -123,23 +123,24 @@ export function ImageUploader({ onImageUpload, onError, locale }: ImageUploaderP
           className="hidden"
         />
 
-        <div className="space-y-4">
+        <div className="space-y-3 sm:space-y-4">
           <button
             onClick={() => fileInputRef.current?.click()}
             className="
               px-6 py-3 bg-blue-500 text-white rounded-lg
-              hover:bg-blue-600 transition-colors
-              font-medium
+              hover:bg-blue-600 active:bg-blue-700 transition-colors
+              font-medium text-sm sm:text-base
+              min-w-[44px] min-h-[44px]
             "
           >
             {t.selectFile}
           </button>
 
-          <p className="text-gray-600 text-lg">
+          <p className="text-gray-600 text-base sm:text-lg">
             {t.dragDrop}
           </p>
 
-          <p className="text-gray-500 text-sm">
+          <p className="text-gray-500 text-xs sm:text-sm">
             {t.pasteHint}
           </p>
 

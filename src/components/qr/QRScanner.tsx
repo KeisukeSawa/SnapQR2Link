@@ -85,9 +85,9 @@ export function QRScanner({ locale }: QRScannerProps) {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto p-4 space-y-6">
+    <div className="w-full max-w-4xl mx-auto px-2 sm:px-4 py-4 sm:py-6 space-y-4 sm:space-y-6">
       {/* Title */}
-      <h1 className="text-3xl font-bold text-center text-gray-900">
+      <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-900">
         {t.title}
       </h1>
 
@@ -100,14 +100,14 @@ export function QRScanner({ locale }: QRScannerProps) {
 
       {/* Loading Indicator */}
       {isLoading && (
-        <div className="flex justify-center items-center py-8">
+        <div className="flex justify-center items-center py-6 sm:py-8">
           <div className="flex flex-col items-center space-y-3">
             <div
-              className="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"
+              className="w-10 h-10 sm:w-12 sm:h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"
               role="status"
               aria-label={t.scanning}
             />
-            <p className="text-gray-600 font-medium">{t.scanning}</p>
+            <p className="text-gray-600 font-medium text-sm sm:text-base">{t.scanning}</p>
           </div>
         </div>
       )}
@@ -115,16 +115,16 @@ export function QRScanner({ locale }: QRScannerProps) {
       {/* Error Message */}
       {error && !isLoading && (
         <div
-          className="bg-red-50 border border-red-200 rounded-lg p-4 text-red-700"
+          className="bg-red-50 border border-red-200 rounded-lg p-3 sm:p-4 text-red-700"
           role="alert"
         >
-          <p className="font-medium">{error}</p>
+          <p className="font-medium text-sm sm:text-base">{error}</p>
         </div>
       )}
 
       {/* Results */}
       {results.length > 0 && !isLoading && (
-        <div className="space-y-4">
+        <div className="space-y-3 sm:space-y-4">
           <QRResultList results={results} locale={locale} />
 
           {/* Clear Button */}
@@ -132,9 +132,10 @@ export function QRScanner({ locale }: QRScannerProps) {
             <button
               onClick={handleClear}
               className="
-                px-6 py-2 bg-gray-300 text-gray-700 rounded-md
-                hover:bg-gray-400 transition-colors
-                font-medium
+                px-6 py-3 bg-gray-300 text-gray-700 rounded-md
+                hover:bg-gray-400 active:bg-gray-500 transition-colors
+                font-medium text-sm sm:text-base
+                min-h-[44px]
               "
               aria-label={t.clearButton}
             >

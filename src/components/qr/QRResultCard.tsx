@@ -44,13 +44,13 @@ export function QRResultCard({ result, locale, onCopySuccess }: QRResultCardProp
   };
 
   return (
-    <div className="relative bg-white border border-gray-200 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow">
+    <div className="relative bg-white border border-gray-200 rounded-lg p-3 sm:p-4 shadow-sm hover:shadow-md transition-shadow">
       {/* QR Code Data */}
       <div className="mb-3">
-        <p className="text-sm text-gray-500 mb-1">
+        <p className="text-xs sm:text-sm text-gray-500 mb-1">
           {result.type === 'url' ? 'URL' : 'Text'}
         </p>
-        <p className="text-gray-900 break-all font-mono text-sm">
+        <p className="text-gray-900 break-all font-mono text-xs sm:text-sm">
           {result.data}
         </p>
       </div>
@@ -61,9 +61,10 @@ export function QRResultCard({ result, locale, onCopySuccess }: QRResultCardProp
           <button
             onClick={() => openURL(result.data)}
             className="
-              w-full px-4 py-2 bg-blue-500 text-white rounded-md
-              hover:bg-blue-600 transition-colors
-              font-medium text-sm
+              w-full px-4 py-3 bg-blue-500 text-white rounded-md
+              hover:bg-blue-600 active:bg-blue-700 transition-colors
+              font-medium text-sm sm:text-base
+              min-h-[44px]
             "
             aria-label={`${t.openLink}: ${result.data}`}
           >
@@ -73,9 +74,10 @@ export function QRResultCard({ result, locale, onCopySuccess }: QRResultCardProp
           <button
             onClick={() => copyToClipboard(result.data)}
             className="
-              w-full px-4 py-2 bg-gray-500 text-white rounded-md
-              hover:bg-gray-600 transition-colors
-              font-medium text-sm
+              w-full px-4 py-3 bg-gray-500 text-white rounded-md
+              hover:bg-gray-600 active:bg-gray-700 transition-colors
+              font-medium text-sm sm:text-base
+              min-h-[44px]
             "
             aria-label={`${t.copyText}: ${result.data}`}
           >
@@ -89,7 +91,7 @@ export function QRResultCard({ result, locale, onCopySuccess }: QRResultCardProp
         <div
           className="
             absolute top-2 right-2
-            bg-green-500 text-white text-xs px-3 py-1 rounded-full
+            bg-green-500 text-white text-xs sm:text-sm px-3 py-1 rounded-full
             animate-fade-in
           "
           role="status"

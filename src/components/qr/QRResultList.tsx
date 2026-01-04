@@ -67,17 +67,17 @@ export function QRResultList({ results, locale }: QRResultListProps) {
   // No results
   if (results.length === 0) {
     return (
-      <div className="text-center text-gray-500 py-8">
-        <p>{t.noResults}</p>
+      <div className="text-center text-gray-500 py-6 sm:py-8">
+        <p className="text-sm sm:text-base">{t.noResults}</p>
       </div>
     );
   }
 
   return (
-    <div className="w-full max-w-2xl mx-auto space-y-4">
+    <div className="w-full max-w-2xl mx-auto space-y-3 sm:space-y-4 px-2 sm:px-0">
       {/* Multiple results header */}
       {results.length > 1 && (
-        <div className="text-center text-gray-700 font-medium">
+        <div className="text-center text-gray-700 font-medium text-sm sm:text-base">
           {t.multipleResults} ({results.length})
         </div>
       )}
