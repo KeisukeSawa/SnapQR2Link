@@ -99,7 +99,7 @@
   - _Requirements: 1.1, 1.2, 1.3, 1.6_
 
 - [ ] 8. ResultCardコンポーネントの実装
-- [ ] 8.1 QRコード結果カードの作成
+- [x] 8.1 QRコード結果カードの作成
   - `src/components/qr/QRResultCard.tsx`を作成
   - QRResultをカード形式で表示
   - URLの場合「リンクを開く」ボタン表示
@@ -119,7 +119,7 @@
   - _Requirements: 3.1, 3.4, 3.5, 3.6_
 
 - [ ] 9. ResultListコンポーネントの実装
-- [ ] 9.1 結果リストと自動オープン機能
+- [x] 9.1 結果リストと自動オープン機能
   - `src/components/qr/QRResultList.tsx`を作成
   - QRResult配列を受け取り、ResultCardをレンダリング
   - `autoOpenURL(results: QRResult[])`関数実装
