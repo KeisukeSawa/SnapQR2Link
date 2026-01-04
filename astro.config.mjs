@@ -9,7 +9,7 @@ import tailwindcss from '@tailwindcss/vite';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://keisukesawa.github.io',
-  base: '/SnapQR2Link',
+  base: process.env.NODE_ENV === 'production' ? '/SnapQR2Link' : '/',
 
   integrations: [
     react(),
