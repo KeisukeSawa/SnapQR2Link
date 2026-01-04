@@ -137,7 +137,7 @@
   - _Requirements: 2.6, 3.2, 3.3_
 
 - [ ] 10. QRScannerコンポーネントの実装
-- [ ] 10.1 メインオーケストレーター
+- [x] 10.1 メインオーケストレーター
   - `src/components/qr/QRScanner.tsx`を作成
   - 状態管理（`useState`でresults、isLoading、errorを管理）
   - ImageUploaderとResultListを統合
