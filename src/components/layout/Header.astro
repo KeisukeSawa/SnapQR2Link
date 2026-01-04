@@ -16,6 +16,18 @@ const alternatePath = `/${alternateLocale}`;
 ---
 
 <header class="bg-white border-b border-gray-200 shadow-sm">
+  <!-- Skip to main content link for keyboard users -->
+  <a
+    href="#main-content"
+    class="
+      sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4
+      bg-blue-600 text-white px-4 py-2 rounded-md z-50
+      focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2
+    "
+  >
+    {locale === 'ja' ? 'メインコンテンツへスキップ' : 'Skip to main content'}
+  </a>
+
   <div class="max-w-6xl mx-auto px-4 py-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center">
       <!-- Logo / Title -->
@@ -35,6 +47,7 @@ const alternatePath = `/${alternateLocale}`;
             border border-gray-300 rounded-md
             hover:border-blue-600
             min-w-[44px] min-h-[44px] inline-flex items-center justify-center
+            focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2
           "
           aria-label={`Switch to ${alternateLabel}`}
         >

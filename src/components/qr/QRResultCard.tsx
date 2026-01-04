@@ -65,6 +65,7 @@ export function QRResultCard({ result, locale, onCopySuccess }: QRResultCardProp
               hover:bg-blue-600 active:bg-blue-700 transition-colors
               font-medium text-sm sm:text-base
               min-h-[44px]
+              focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2
             "
             aria-label={`${t.openLink}: ${result.data}`}
           >
@@ -78,6 +79,7 @@ export function QRResultCard({ result, locale, onCopySuccess }: QRResultCardProp
               hover:bg-gray-600 active:bg-gray-700 transition-colors
               font-medium text-sm sm:text-base
               min-h-[44px]
+              focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2
             "
             aria-label={`${t.copyText}: ${result.data}`}
           >

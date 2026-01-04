@@ -55,9 +55,27 @@ const ogImageUrl = new URL('/og-image.png', Astro.site || Astro.url.origin).href
 
     <!-- Favicon (placeholder) -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Global focus styles for accessibility -->
+    <style>
+      /* Enhanced focus indicators for keyboard navigation */
+      *:focus {
+        outline: 2px solid #3b82f6;
+        outline-offset: 2px;
+      }
+
+      *:focus:not(:focus-visible) {
+        outline: none;
+      }
+
+      *:focus-visible {
+        outline: 2px solid #3b82f6;
+        outline-offset: 2px;
+      }
+    </style>
   </head>
   <body class="min-h-screen bg-gray-50 text-gray-900">
-    <main>
+    <main id="main-content">
       <slot />
     </main>
   </body>

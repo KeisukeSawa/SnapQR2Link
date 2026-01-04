@@ -114,6 +114,8 @@ export function ImageUploader({ onImageUpload, onError, locale }: ImageUploaderP
         onDragOver={handleDragOver}
         onDragLeave={handleDragLeave}
         onDrop={handleDrop}
+        role="region"
+        aria-label={locale === 'ja' ? 'QRコード画像アップロード' : 'QR code image upload'}
       >
         <input
           ref={fileInputRef}
@@ -121,6 +123,8 @@ export function ImageUploader({ onImageUpload, onError, locale }: ImageUploaderP
           accept="image/jpeg,image/png,image/webp,image/gif"
           onChange={handleFileSelect}
           className="hidden"
+          id="qr-image-input"
+          aria-label={t.selectFile}
         />
 
         <div className="space-y-3 sm:space-y-4">
@@ -131,7 +135,9 @@ export function ImageUploader({ onImageUpload, onError, locale }: ImageUploaderP
               hover:bg-blue-600 active:bg-blue-700 transition-colors
               font-medium text-sm sm:text-base
               min-w-[44px] min-h-[44px]
+              focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2
             "
+            aria-describedby="upload-instructions"
           >
             {t.selectFile}
           </button>
@@ -144,7 +150,7 @@ export function ImageUploader({ onImageUpload, onError, locale }: ImageUploaderP
             {t.pasteHint}
           </p>
 
-          <div className="text-xs text-gray-400 space-y-1">
+          <div id="upload-instructions" className="text-xs text-gray-400 space-y-1">
             <p>{t.supportedFormats}</p>
             <p>{t.maxFileSize}</p>
           </div>

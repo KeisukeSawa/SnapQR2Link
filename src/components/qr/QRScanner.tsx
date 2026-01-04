@@ -136,6 +136,7 @@ export function QRScanner({ locale }: QRScannerProps) {
                 hover:bg-gray-400 active:bg-gray-500 transition-colors
                 font-medium text-sm sm:text-base
                 min-h-[44px]
+                focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2
               "
               aria-label={t.clearButton}
             >
