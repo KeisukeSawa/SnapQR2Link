@@ -1,0 +1,7 @@
+# robots.txt for SnapQR2Link
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://snapqr2link.example.com/sitemap-index.xml

@@ -1,0 +1,14 @@
+# OGP Image Placeholder
+
+This file serves as a placeholder for the actual OGP image.
+
+To complete SEO setup:
+1. Create an OGP image (1200x630px recommended)
+2. Save it as `public/og-image.png`
+3. Delete this placeholder file
+
+The OGP image should:
+- Be 1200x630 pixels (optimal for social sharing)
+- Feature the SnapQR2Link branding
+- Include a visual representation of the QR scanning feature
+- Use high-contrast colors for visibility

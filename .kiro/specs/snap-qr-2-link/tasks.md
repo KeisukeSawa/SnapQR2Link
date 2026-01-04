@@ -227,7 +227,7 @@
 
 ## SEOとパフォーマンス最適化
 
-- [ ] 15. (P) SEO設定
+- [x] 15. (P) SEO設定
   - sitemap.xmlの自動生成（`@astrojs/sitemap`統合）
   - robots.txtの作成
   - 各ページに適切なtitleタグとメタディスクリプションを設定
@@ -235,7 +235,7 @@
   - 構造化データ（Schema.org）の検討（オプション）
   - _Requirements: 7.1, 7.2, 7.3, 7.4_
 
-- [ ] 16. (P) パフォーマンス最適化
+- [x] 16. (P) パフォーマンス最適化
   - JavaScriptバンドルサイズの計測（目標: 100KB以下）
   - TailwindCSS未使用クラスの削除（PurgeCSS）
   - QRスキャナーのみReact島として配信（`client:load`）
