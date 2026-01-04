@@ -129,6 +129,7 @@ export function ImageUploader({ onImageUpload, onError, locale }: ImageUploaderP
 
         <div className="space-y-3 sm:space-y-4">
           <button
+            type="button"
             onClick={() => fileInputRef.current?.click()}
             className="
               px-6 py-3 bg-blue-500 text-white rounded-lg
