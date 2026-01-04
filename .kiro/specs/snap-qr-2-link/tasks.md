@@ -159,7 +159,7 @@
 ## レイアウトとページの実装
 
 - [ ] 11. 基本レイアウトの実装
-- [ ] 11.1 (P) BaseLayoutの作成
+- [x] 11.1 (P) BaseLayoutの作成
   - `src/layouts/BaseLayout.astro`を作成
   - HTML基本構造（`<html>`, `<head>`, `<body>`）
   - メタタグ設定（title, description, viewport, charset）
@@ -169,14 +169,14 @@
   - TailwindCSSのインポート
   - _Requirements: 7.1, 7.2, 7.5, 7.6_
 
-- [ ] 11.2 (P) HeaderとFooterの作成
+- [x] 11.2 (P) HeaderとFooterの作成
   - `src/components/layout/Header.astro`を作成（静的コンテンツ）
   - `src/components/layout/Footer.astro`を作成（静的コンテンツ）
   - i18n翻訳辞書から多言語テキストを取得
   - レスポンシブデザイン（TailwindCSS）
   - _Requirements: 4.1, 4.2, 4.3, 5.1, 5.2_
 
-- [ ] 11.3 (P) MainLayoutの作成
+- [x] 11.3 (P) MainLayoutの作成
   - `src/layouts/MainLayout.astro`を作成
   - BaseLayoutを拡張
   - HeaderとFooterを統合

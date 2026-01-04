@@ -1,0 +1,45 @@
+---
+import { getI18n } from '@/i18n/utils';
+import type { Locale } from '@/i18n/utils';
+
+export interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const i18n = getI18n(locale);
+
+// Alternate language link
+const alternateLocale = locale === 'ja' ? 'en' : 'ja';
+const alternateLabel = locale === 'ja' ? 'English' : '日本語';
+const alternatePath = `/${alternateLocale}`;
+---
+
+<header class="bg-white border-b border-gray-200 shadow-sm">
+  <div class="max-w-6xl mx-auto px-4 py-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center">
+      <!-- Logo / Title -->
+      <div class="flex items-center">
+        <h1 class="text-xl sm:text-2xl font-bold text-blue-600">
+          {i18n.app.title}
+        </h1>
+      </div>
+
+      <!-- Language Switcher -->
+      <nav>
+        <a
+          href={alternatePath}
+          class="
+            px-3 py-2 text-sm font-medium text-gray-600
+            hover:text-blue-600 transition-colors
+            border border-gray-300 rounded-md
+            hover:border-blue-600
+          "
+          aria-label={`Switch to ${alternateLabel}`}
+        >
+          {alternateLabel}
+        </a>
+      </nav>
+    </div>
+  </div>
+</header>
