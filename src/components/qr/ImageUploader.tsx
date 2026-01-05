@@ -9,18 +9,20 @@ export interface ImageUploaderProps {
 
 const translations = {
   ja: {
+    title: 'QRコード画像をアップロード',
+    dragDrop: 'ここに画像をドラッグ＆ドロップ',
+    or: 'または',
     selectFile: 'ファイルを選択',
-    dragDrop: 'ここにドラッグ＆ドロップ',
-    pasteHint: 'または Ctrl+V で貼り付け',
-    supportedFormats: '対応形式: JPG, PNG, WebP, GIF',
-    maxFileSize: '最大ファイルサイズ: 50MB'
+    pasteHint: 'Ctrl+V で画像を貼り付け',
+    supportedFormats: 'JPG, PNG, WebP, GIF (最大 50MB)'
   },
   en: {
+    title: 'Upload QR Code Image',
+    dragDrop: 'Drag & Drop Image Here',
+    or: 'or',
     selectFile: 'Select File',
-    dragDrop: 'Drag & Drop Here',
-    pasteHint: 'or Paste with Ctrl+V',
-    supportedFormats: 'Supported: JPG, PNG, WebP, GIF',
-    maxFileSize: 'Max file size: 50MB'
+    pasteHint: 'Paste image with Ctrl+V',
+    supportedFormats: 'JPG, PNG, WebP, GIF (max 50MB)'
   }
 };
 
@@ -102,14 +104,14 @@ export function ImageUploader({ onImageUpload, onError, locale }: ImageUploaderP
   }, [locale, onImageUpload, onError]);
 
   return (
-    <div className="w-full max-w-2xl mx-auto px-2 sm:px-0">
+    <div className="w-full max-w-3xl mx-auto px-2 sm:px-0">
       <div
         className={`
-          border-2 border-dashed rounded-lg p-4 sm:p-6 md:p-8 text-center
-          transition-colors duration-200
+          relative border-2 border-dashed rounded-2xl p-8 sm:p-12 text-center
+          transition-all duration-300 ease-in-out
           ${isDragging
-            ? 'border-blue-500 bg-blue-50'
-            : 'border-gray-300 hover:border-gray-400'}
+            ? 'border-blue-500 bg-gradient-to-br from-blue-50 to-purple-50 scale-[1.02] shadow-xl'
+            : 'border-gray-300 hover:border-blue-400 hover:shadow-lg bg-white'}
         `}
         onDragOver={handleDragOver}
         onDragLeave={handleDragLeave}
@@ -127,33 +129,72 @@ export function ImageUploader({ onImageUpload, onError, locale }: ImageUploaderP
           aria-label={t.selectFile}
         />
 
-        <div className="space-y-3 sm:space-y-4">
+        <div className="space-y-6">
+          {/* Icon */}
+          <div className="flex justify-center">
+            <div className={`
+              p-4 rounded-full transition-all duration-300
+              ${isDragging
+                ? 'bg-blue-500 scale-110'
+                : 'bg-gradient-to-br from-blue-500 to-purple-500'}
+            `}>
+              <svg className="w-12 h-12 sm:w-16 sm:h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+              </svg>
+            </div>
+          </div>
+
+          {/* Title */}
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-800">
+            {t.title}
+          </h2>
+
+          {/* Drag & Drop Text */}
+          <p className="text-base sm:text-lg text-gray-600 font-medium">
+            {t.dragDrop}
+          </p>
+
+          {/* Divider */}
+          <div className="flex items-center gap-4 max-w-xs mx-auto">
+            <div className="flex-1 h-px bg-gray-300"></div>
+            <span className="text-sm text-gray-500">{t.or}</span>
+            <div className="flex-1 h-px bg-gray-300"></div>
+          </div>
+
+          {/* Select File Button */}
           <button
             type="button"
             onClick={() => fileInputRef.current?.click()}
             className="
-              px-6 py-3 bg-blue-500 text-white rounded-lg
-              hover:bg-blue-600 active:bg-blue-700 transition-colors
-              font-medium text-sm sm:text-base
+              px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl
+              hover:from-blue-700 hover:to-purple-700 active:scale-95
+              transition-all duration-200 shadow-lg hover:shadow-xl
+              font-semibold text-sm sm:text-base
               min-w-[44px] min-h-[44px]
-              focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2
+              focus:outline-none focus:ring-4 focus:ring-blue-300
             "
             aria-describedby="upload-instructions"
           >
             {t.selectFile}
           </button>
 
-          <p className="text-gray-600 text-base sm:text-lg">
-            {t.dragDrop}
-          </p>
+          {/* Paste Hint */}
+          <div className="space-y-2">
+            <p className="text-sm text-gray-500 flex items-center justify-center gap-2">
+              <kbd className="px-2 py-1 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-300 rounded">
+                Ctrl
+              </kbd>
+              <span>+</span>
+              <kbd className="px-2 py-1 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-300 rounded">
+                V
+              </kbd>
+              <span className="ml-1">{t.pasteHint}</span>
+            </p>
 
-          <p className="text-gray-500 text-xs sm:text-sm">
-            {t.pasteHint}
-          </p>
-
-          <div id="upload-instructions" className="text-xs text-gray-400 space-y-1">
-            <p>{t.supportedFormats}</p>
-            <p>{t.maxFileSize}</p>
+            {/* Supported Formats */}
+            <p id="upload-instructions" className="text-xs text-gray-400">
+              {t.supportedFormats}
+            </p>
           </div>
         </div>
       </div>

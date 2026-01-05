@@ -85,12 +85,7 @@ export function QRScanner({ locale }: QRScannerProps) {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto px-2 sm:px-4 py-4 sm:py-6 space-y-4 sm:space-y-6">
-      {/* Title */}
-      <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-900">
-        {t.title}
-      </h1>
-
+    <div className="w-full max-w-4xl mx-auto px-2 sm:px-4 py-6 sm:py-8 space-y-6 sm:space-y-8">
       {/* Image Uploader */}
       <ImageUploader
         onImageUpload={handleImageUpload}
@@ -100,14 +95,21 @@ export function QRScanner({ locale }: QRScannerProps) {
 
       {/* Loading Indicator */}
       {isLoading && (
-        <div className="flex justify-center items-center py-6 sm:py-8">
-          <div className="flex flex-col items-center space-y-3">
-            <div
-              className="w-10 h-10 sm:w-12 sm:h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"
-              role="status"
-              aria-label={t.scanning}
-            />
-            <p className="text-gray-600 font-medium text-sm sm:text-base">{t.scanning}</p>
+        <div className="flex justify-center items-center py-8 sm:py-12">
+          <div className="flex flex-col items-center space-y-4">
+            <div className="relative">
+              <div
+                className="w-16 h-16 sm:w-20 sm:h-20 border-4 border-purple-200 border-t-purple-600 rounded-full animate-spin"
+                role="status"
+                aria-label={t.scanning}
+              />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <svg className="w-8 h-8 sm:w-10 sm:h-10 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z" />
+                </svg>
+              </div>
+            </div>
+            <p className="text-gray-700 font-semibold text-base sm:text-lg">{t.scanning}</p>
           </div>
         </div>
       )}
@@ -115,16 +117,21 @@ export function QRScanner({ locale }: QRScannerProps) {
       {/* Error Message */}
       {error && !isLoading && (
         <div
-          className="bg-red-50 border border-red-200 rounded-lg p-3 sm:p-4 text-red-700"
+          className="bg-gradient-to-r from-red-50 to-orange-50 border-2 border-red-300 rounded-xl p-4 sm:p-6 shadow-lg"
           role="alert"
         >
-          <p className="font-medium text-sm sm:text-base">{error}</p>
+          <div className="flex items-start gap-3">
+            <svg className="w-6 h-6 text-red-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <p className="text-red-800 font-medium text-sm sm:text-base">{error}</p>
+          </div>
         </div>
       )}
 
       {/* Results */}
       {results.length > 0 && !isLoading && (
-        <div className="space-y-3 sm:space-y-4">
+        <div className="space-y-4 sm:space-y-6">
           <QRResultList results={results} locale={locale} />
 
           {/* Clear Button */}
@@ -132,14 +139,19 @@ export function QRScanner({ locale }: QRScannerProps) {
             <button
               onClick={handleClear}
               className="
-                px-6 py-3 bg-gray-300 text-gray-700 rounded-md
-                hover:bg-gray-400 active:bg-gray-500 transition-colors
-                font-medium text-sm sm:text-base
+                px-8 py-3 bg-gradient-to-r from-gray-600 to-gray-700 text-white rounded-xl
+                hover:from-gray-700 hover:to-gray-800 active:scale-95
+                transition-all duration-200 shadow-md hover:shadow-lg
+                font-semibold text-sm sm:text-base
                 min-h-[44px]
-                focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2
+                focus:outline-none focus:ring-4 focus:ring-gray-300
+                flex items-center gap-2
               "
               aria-label={t.clearButton}
             >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
               {t.clearButton}
             </button>
           </div>
