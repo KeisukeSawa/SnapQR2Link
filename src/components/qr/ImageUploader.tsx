@@ -107,7 +107,7 @@ export function ImageUploader({ onImageUpload, onError, locale }: ImageUploaderP
     <div className="w-full max-w-3xl mx-auto px-2 sm:px-0">
       <div
         className={`
-          relative border-2 border-dashed rounded-2xl p-8 sm:p-12 text-center
+          relative border-2 border-dashed rounded-2xl p-4 sm:p-8 text-center
           transition-all duration-300 ease-in-out
           ${isDragging
             ? 'border-blue-500 bg-gradient-to-br from-blue-50 to-purple-50 scale-[1.02] shadow-xl'
@@ -129,23 +129,23 @@ export function ImageUploader({ onImageUpload, onError, locale }: ImageUploaderP
           aria-label={t.selectFile}
         />
 
-        <div className="space-y-6">
+        <div className="space-y-3 sm:space-y-4">
           {/* Icon */}
           <div className="flex justify-center">
             <div className={`
-              p-4 rounded-full transition-all duration-300
+              p-3 rounded-full transition-all duration-300
               ${isDragging
                 ? 'bg-blue-500 scale-110'
                 : 'bg-gradient-to-br from-blue-500 to-purple-500'}
             `}>
-              <svg className="w-12 h-12 sm:w-16 sm:h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-10 h-10 sm:w-14 sm:h-14 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
               </svg>
             </div>
           </div>
 
           {/* Title */}
-          <h2 className="text-xl sm:text-2xl font-bold text-gray-800">
+          <h2 className="text-lg sm:text-xl font-bold text-gray-800">
             {t.title}
           </h2>
 
@@ -166,7 +166,7 @@ export function ImageUploader({ onImageUpload, onError, locale }: ImageUploaderP
             type="button"
             onClick={() => fileInputRef.current?.click()}
             className="
-              px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl
+              px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl
               hover:from-blue-700 hover:to-purple-700 active:scale-95
               transition-all duration-200 shadow-lg hover:shadow-xl
               font-semibold text-sm sm:text-base

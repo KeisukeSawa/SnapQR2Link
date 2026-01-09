@@ -85,7 +85,7 @@ export function QRScanner({ locale }: QRScannerProps) {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto px-2 sm:px-4 py-6 sm:py-8 space-y-6 sm:space-y-8">
+    <div className="w-full max-w-4xl mx-auto px-2 sm:px-4 py-2 sm:py-6 space-y-3 sm:space-y-6">
       {/* Image Uploader */}
       <ImageUploader
         onImageUpload={handleImageUpload}
@@ -95,7 +95,7 @@ export function QRScanner({ locale }: QRScannerProps) {
 
       {/* Loading Indicator */}
       {isLoading && (
-        <div className="flex justify-center items-center py-8 sm:py-12">
+        <div className="flex justify-center items-center py-4 sm:py-8">
           <div className="flex flex-col items-center space-y-4">
             <div className="relative">
               <div
@@ -131,7 +131,7 @@ export function QRScanner({ locale }: QRScannerProps) {
 
       {/* Results */}
       {results.length > 0 && !isLoading && (
-        <div className="space-y-4 sm:space-y-6">
+        <div className="space-y-3 sm:space-y-4">
           <QRResultList results={results} locale={locale} />
 
           {/* Clear Button */}

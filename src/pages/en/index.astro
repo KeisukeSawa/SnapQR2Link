@@ -16,7 +16,7 @@ const canonicalUrl = new URL('/en', Astro.site || Astro.url.origin).href;
   locale={locale}
   canonicalUrl={canonicalUrl}
 >
-  <div class="container mx-auto px-4">
+  <div class="container mx-auto px-2 sm:px-4">
     <QRScanner locale={locale} client:load />
   </div>
 </MainLayout>
