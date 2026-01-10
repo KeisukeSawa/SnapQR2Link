@@ -49,10 +49,13 @@
   - `scanQRCode(imageFile: File, options?: ScanOptions)`関数を実装
   - Canvas APIで画像をImageDataに変換
   - jsqrライブラリで`jsQR(imageData, width, height, options)`を実行
-  - 複数QRコード検出のロジック実装（画像全体を走査）
+  - 複数QRコード検出のロジック実装（マルチスケール・マルチリージョンスキャン）:
+    - フル画像スキャン: 3つのスケール（1.0, 2.0, 3.0）× 3つのinversion設定（attemptBoth, invertFirst, dontInvert）
+    - リージョナルスキャン: 7つの領域（top-left, top-right, bottom-left, bottom-right, center, left, right）× 3つのスケール（2.0, 3.0, 4.0）
+    - 重複検出防止（Set<string>使用）
   - type判定（URL or テキスト）を`isQRCodeURL()`で実装
   - 画像リサイズ処理（最大4000x4000px）
-  - `inversionAttempts: 'attemptBoth'`オプション設定
+  - デバッグログ出力（各スキャンステップ）
   - _Requirements: 2.1, 2.3, 2.4, 2.5, 2.8_
 
 - [ ] 5.2* (P) スキャナーのユニットテスト
@@ -214,7 +217,13 @@
   - タッチ操作向けボタンサイズ（最小44x44px）
   - 画面幅768px未満で単一カラムレイアウト
   - 画面幅768px以上で複数カラムレイアウト
-  - _Requirements: 5.1, 5.2, 5.3, 5.4_
+  - iPhone SE（320px）対応：縦スクロール最小化のため各コンポーネントのパディング/スペーシングを削減:
+    - MainLayout: `py-3` (small), `py-6` (large)
+    - Header: `py-3` (small), `py-4` (large)
+    - Footer: `mt-4` (small), `mt-8` (large), `py-3` (small), `py-4` (large)
+    - QRScanner: `py-2` (small), `py-6` (large), `space-y-3` (small), `space-y-6` (large)
+    - ImageUploader: `p-4` (small), `p-8` (large)
+  - _Requirements: 5.1, 5.2, 5.3, 5.4, 5.5_
 
 - [x] 14. アクセシビリティ対応
   - キーボードナビゲーション（Tab、Enter、Space）のサポート

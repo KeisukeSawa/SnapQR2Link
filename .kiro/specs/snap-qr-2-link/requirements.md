@@ -64,6 +64,12 @@ SnapQR2Linkは、スクリーンショット内のQRコードを解析し、リ�
 2. When モバイルブラウザでアクセスした時, the SnapQR2Linkアプリ shall タッチ操作に最適化されたボタンサイズ（最小44x44px）を提供する
 3. When 画面幅が768px未満の時, the SnapQR2Linkアプリ shall 縦スクロール可能な単一カラムレイアウトを表示する
 4. When 画面幅が768px以上の時, the SnapQR2Linkアプリ shall 複数カラムレイアウトを表示できる
+5. When iPhone SE（320px×568px）のような最小画面サイズでアクセスした時, the SnapQR2Linkアプリ shall 縦スクロールを最小限に抑えるため、各コンポーネントのパディングとスペーシングを削減する
+   - MainLayout: `py-3` (small), `py-6` (large)
+   - Header: `py-3` (small), `py-4` (large)
+   - Footer: `mt-4` (small), `mt-8` (large), `py-3` (small), `py-4` (large)
+   - QRScanner: `py-2` (small), `py-6` (large), `space-y-3` (small), `space-y-6` (large)
+   - ImageUploader: `p-4` (small), `p-8` (large)
 
 ### Requirement 6: アクセシビリティ
 **Objective:** ユーザーとして、キーボード操作やスクリーンリーダーを使用しても快適に利用したい。

@@ -490,7 +490,12 @@ function isQRCodeURL(data: string): boolean {
 **Implementation Notes**
 - **Integration**: FileReaderで画像をDataURL読み込み、Imageオブジェクト経由でCanvasに描画
 - **Validation**: 画像サイズが4000x4000pxを超える場合、比率維持してリサイズ
-- **Risks**: jsqrの検出精度が不十分 → `inversionAttempts: 'attemptBoth'`オプション、検出失敗時のユーザーガイダンス
+- **複数QRコード検出の詳細実装**:
+  - **フル画像スキャン**: 3つのスケール（1.0, 2.0, 3.0）× 3つのinversion設定（attemptBoth, invertFirst, dontInvert）で走査
+  - **リージョナルスキャン**: 7つの領域（top-left, top-right, bottom-left, bottom-right, center, left, right）をそれぞれ3つのスケール（2.0, 3.0, 4.0）で走査
+  - **重複検出防止**: Set<string>で検出済みQRコードを管理し、重複を除外
+  - **デバッグログ**: 各スキャンステップでconsole.log出力、検出結果を記録
+- **Risks**: jsqrの検出精度が不十分 → マルチスケール・マルチリージョンスキャンで検出率向上、検出失敗時のユーザーガイダンス
 
 #### Validator
 
@@ -876,6 +881,34 @@ document.addEventListener('paste', (event: ClipboardEvent) => {
    - 3つのQRコード → 3秒以内
 
 ## Optional Sections
+
+### UI Design Guidelines
+
+**モダンなデザインアプローチ**:
+- **カラースキーム**:
+  - 背景: グラデーション `bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50`
+  - プライマリボタン: `bg-gradient-to-r from-blue-600 to-purple-600`
+  - セカンダリボタン: `bg-gradient-to-r from-gray-600 to-gray-700`
+  - ヘッダー: `bg-gradient-to-r from-blue-600 to-purple-600`
+- **アニメーション**:
+  - ボタンホバー: `hover:from-blue-700 hover:to-purple-700`, `hover:shadow-lg`
+  - ボタンアクティブ: `active:scale-95` (押下時の縮小効果)
+  - ローディング: `animate-spin` (回転アニメーション)
+  - トランジション: `transition-all duration-200` (スムーズな状態変化)
+- **カードデザイン**:
+  - 角丸: `rounded-xl`, `rounded-2xl`
+  - シャドウ: `shadow-md`, `shadow-lg`, `hover:shadow-xl`
+  - ボーダー: `border-2 border-dashed` (ドラッグ&ドロップエリア)
+
+**レスポンシブブレークポイント**:
+- Small (default): 320px〜 (iPhone SE対応)
+- Medium (sm:): 640px〜
+- Large (lg:): 1024px〜
+
+**アクセシビリティ対応**:
+- フォーカスインジケーター: `focus:outline-none focus:ring-4 focus:ring-blue-300`
+- タッチターゲットサイズ: 最小 `min-w-[44px] min-h-[44px]`
+- ARIA属性: `aria-label`, `role`, `aria-describedby`
 
 ### Security Considerations
 
